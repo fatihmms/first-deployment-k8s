@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-deployment
+  labels:
+    app: blue
+spec:
+  selector:
+    matchLabels:
+      name: hello-world
+  template:
+    metadata:
+      name: hello-world-pod
+      labels:
+        name: hello-world
+      spec:
+        containers:
+        - name: hello-blue
+          image: fatihmms/hello-blue
+  replicas: 3
