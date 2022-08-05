@@ -2,18 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-world-deployment
-  labels:
-    app: blue
 spec:
   selector:
     matchLabels:
-      name: hello-world
+      app: blue
   template:
     metadata:
       name: hello-world-pod
       labels:
-        name: hello-world
-      spec:
+        app: blue
+    spec:
         containers:
         - name: hello-blue
           image: fatihmms/hello-blue
